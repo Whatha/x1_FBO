@@ -91,7 +91,7 @@ public class MyHandler extends Handler {
                     Toast.makeText(c, "Fueled: "+json.getString("Data"), Toast.LENGTH_LONG).show();
 
                     mActivity.get().dd.dismiss();
-                    Static_variables.selected.balance=Integer.parseInt(json.getString("Data"));
+                    Static_variables.selected.getMetros().get(0).currentValue=Integer.parseInt(json.getString("Data"));
                     Intent a = new Intent(c, Fuel_feed.class);
                     a.putExtra("status", "Fueling completed!");
                     c.startActivity(a);

@@ -789,6 +789,7 @@ public ProgressDialog dd;
         }
     };
 
+
     @Override
     public void onResume() {
         super.onResume();
@@ -872,5 +873,4 @@ public ProgressDialog dd;
             usbService = null;
         }
     };
-
 }
