@@ -72,6 +72,10 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="750e256b0f6f2a07086a0bc9efd4620cc91dfc31" />
+        <service
+            android:name="com.whathadesign.x1_fbo.UsbService"
+            android:enabled="true">
+        </service>
     </application>
 
 </manifest>
