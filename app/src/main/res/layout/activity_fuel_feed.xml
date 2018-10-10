@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fuel_feed_layou"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grisclaro"
+    android:padding="0dp"
+    tools:context="com.whathadesign.x1_fbo.Fuel_feed">
+
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/custom_bar" />
+
+            <RelativeLayout
+                android:id="@+id/main_order_relative"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_above="@+id/order_content"
+                android:layout_alignParentStart="true"
+                android:background="@color/colorPrimary"
+                android:elevation="@dimen/cardview_default_elevation"
+                android:padding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/truck_photo2"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/truck_description_feed"
+                            android:padding="10dp"
+                            android:scaleType="fitEnd"
+                            android:tint="@color/blanco"
+                            app:srcCompat="@drawable/truck" />
+
+                        <TextView
+                            android:id="@+id/truck_description_feed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="22dp"
+                            android:text="J1"
+                            android:textColor="@color/blanco"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="35dp"
+                        android:layout_marginStart="35dp">
+
+                        <RelativeLayout
+                            android:id="@+id/contenedor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                            <include
+                                android:id="@+id/stubv"
+                                layout="@layout/avgas_min"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:inflatedId="@+id/message_layout" />
+                        </RelativeLayout>
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="65dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Capacity"
+                            android:textColor="@color/blanco"
+                            android:textSize="12sp"
+                            tools:layout_editor_absoluteX="390dp"
+                            tools:layout_editor_absoluteY="124dp" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/capacity_feed"
+                            android:layout_toEndOf="@+id/capacity_feed"
+                            android:text="Gals"
+                            android:textColor="@color/blanco"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/capacity_feed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/textView2"
+                            android:layout_below="@+id/textView2"
+                            android:text="5000"
+                            android:textAlignment="center"
+                            android:textColor="@color/blanco"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="35dp"
+                        android:layout_marginStart="35dp">
+
+                        <TextView
+                            android:id="@+id/meterone_feed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/textView5"
+                            android:background="@color/transparente"
+                            android:minWidth="60dp"
+                            android:text="316151515"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/blanco"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="15dp"
+                            android:text="Meter One"
+                            android:textColor="@color/blanco"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/textView5"
+                            android:layout_alignBottom="@+id/textView5"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/meterone_feed"
+                            android:text="Meter Two"
+                            android:textColor="@color/blanco"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/metertwo_feed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/textView6"
+                            android:layout_below="@+id/textView6"
+                            android:background="@color/transparente"
+                            android:text="324980"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/blanco"
+                            android:textSize="18sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="22dp"
+                        android:layout_marginStart="50dp">
+
+                        <TextView
+                            android:id="@+id/balance_text"
+                            android:layout_width="75dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/textView15"
+                            android:text="652"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/blanco"
+                            android:textSize="8sp" />
+
+                        <TextView
+                            android:id="@+id/progress_capcity"
+                            android:layout_width="75dp"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/balance_progress_bar"
+                            android:layout_alignParentEnd="true"
+                            android:text="5000"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/blanco"
+                            android:textSize="8sp" />
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="15dp"
+                            android:text="Current Balance"
+                            android:textColor="@color/blanco"
+                            android:textSize="12sp" />
+
+                        <ProgressBar
+                            android:id="@+id/balance_progress_bar"
+                            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/balance_text"
+                            android:max="100"
+                            android:progress="50"
+                            android:progressDrawable="@drawable/order_progress_bar" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/white_border_notround"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main_order_relative">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:background="@color/transparente">
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/tail"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="5"
+                        android:background="@android:color/transparent"
+                        android:drawableRight="@drawable/sort_arrows"
+                        android:drawableTint="@color/colorPrimary"
+                        android:padding="16dp"
+                        android:text="Tail Number"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/icao"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_toEndOf="@+id/tail"
+                        android:layout_weight="5"
+                        android:background="@android:color/transparent"
+                        android:drawableRight="@drawable/sort_arrows"
+                        android:drawableTint="@color/colorPrimary"
+                        android:padding="16dp"
+                        android:text="ICAO"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+
+                    <Button
+                        android:id="@+id/fuel_order"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@+id/dpt"
+                        android:layout_weight="5"
+                        android:background="@android:color/transparent"
+                        android:drawableRight="@drawable/sort_arrows"
+                        android:drawableTint="@color/colorPrimary"
+                        android:padding="16dp"
+                        android:text="Fuel Order"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/fuel_fsii"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@+id/dpt"
+                        android:layout_weight="5"
+                        android:background="@android:color/transparent"
+                        android:drawableRight="@drawable/sort_arrows"
+                        android:drawableTint="@color/colorPrimary"
+                        android:padding="16dp"
+                        android:text="FSII"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/fuel_on"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="45dp"
+                        android:layout_toEndOf="@+id/fuel_order"
+                        android:layout_weight="5"
+                        android:background="@android:color/transparent"
+                        android:drawableRight="@drawable/sort_arrows"
+                        android:padding="16dp"
+                        android:text="Fuel On"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+                    <Button
+                        android:id="@+id/dpt"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_toEndOf="@+id/icao"
+                        android:layout_weight="15"
+                        android:background="@android:color/transparent"
+                        android:drawableRight="@drawable/sort_arrows"
+                        android:drawableTint="@color/colorPrimary"
+                        android:padding="16dp"
+                        android:text="Dept. Time"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+                    <RelativeLayout
+                        android:layout_width="75dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15">
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/order_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout5">
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/swipeRefreshLayout"
+                    android:layout_width="match_parent"
+                    android:layout_above="@+id/relativeLayout6"
+                    android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_feed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:layout_alignParentStart="true">
+
+
+                </android.support.v7.widget.RecyclerView>
+                </android.support.v4.widget.SwipeRefreshLayout>
+                <RelativeLayout
+                    android:id="@+id/relativeLayout6"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary"
+                    android:gravity="right|center_horizontal|end">
+
+                    <TextView
+                        android:id="@+id/singin_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/fbo_name"
+                        android:layout_alignBottom="@+id/fbo_name"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="60dp"
+                        android:text="Signed in at 8:30 am"
+                        android:textColor="@color/blanco"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/fbo_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="FBO X-1 Name"
+                        android:textColor="@color/blanco"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/feed_trucker_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="58dp"
+                        android:text="John Doe"
+                        android:textColor="@color/blanco"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/toast_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@color/azulletra"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/toast_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="Meters updated!"
+                        android:textAlignment="center"
+                        android:textColor="@color/blanco"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:background="@android:color/white">
+
+            <com.mindorks.placeholderview.PlaceHolderView
+                android:id="@+id/drawerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+        </FrameLayout>
+    </android.support.v4.widget.DrawerLayout>
+
+</RelativeLayout>

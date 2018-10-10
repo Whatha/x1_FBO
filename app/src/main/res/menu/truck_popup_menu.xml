@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Search / will display always -->
+    <item
+        android:id="@+id/truck_log"
+        android:icon="@drawable/truck_log_quick_icon"
+        android:title="@string/popup_log"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/topoff"
+        android:icon="@drawable/top_off_icon"
+        android:title="hi"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/close"
+        android:title="@string/close" />
+</menu>

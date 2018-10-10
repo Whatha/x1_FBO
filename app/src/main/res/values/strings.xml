@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">X1-FBO</string>
+    <string name="nm">Name</string>
+    <string name="ps">Password</string>
+    <string name="login">Login</string>
+    <string name="biometric">Biometric Login</string>
+    <string name="popup_log">Fuel truck log</string>
+    <string name="close">close truck</string>
+    <string name="open">1</string>
+    <string name="closest">2</string>
+    <string name="loading">Loading, please wait.</string>
+    <string name="avgas">AVGAS 100LL</string>
+    <string name="jeta">JET A</string>
+    <string name="diesel">DIESEL</string>
+    <string name="gasoline">GASOLINE</string>
+
+</resources>

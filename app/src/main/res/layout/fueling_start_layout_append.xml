@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:background="@color/blanco"
+    android:paddingBottom="20dp"
+    android:paddingEnd="20dp"
+    android:paddingStart="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meter 1 Start"
+                    android:textColor="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/apend_meter1"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView4"
+                    android:background="@drawable/gray_rect"
+                    android:backgroundTint="@color/grismedio"
+                    android:drawableRight="@drawable/edit"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="1234567"
+                    android:textColor="@color/colorPrimary" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meter 1 End"
+                    android:textColor="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/apend_meter1_end"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView6"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:inputType="numberSigned" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meter 1 Total"
+                    android:textColor="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/apend_meter1_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView7"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:inputType="numberSigned" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal">
+
+                <Button
+                    android:id="@+id/fuel_order_continue"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="39dp"
+                    android:background="@drawable/gray_rect"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:backgroundTint="@color/azulletra"
+                    android:padding="0dp"
+                    android:text="continue"
+                    android:textColor="@color/blanco"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meter 2 Start"
+                    android:textColor="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/apend_meter2"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView8"
+                    android:background="@drawable/gray_rect"
+                    android:backgroundTint="@color/grismedio"
+                    android:drawableRight="@drawable/edit"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="1234567"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meter 2 End"
+                    android:textColor="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/apend_meter2_end"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView3"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:inputType="numberSigned" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meter 2 Total"
+                    android:textColor="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/apend_meter2_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView32"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:inputType="numberSigned" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal">
+
+                <Button
+                    android:id="@+id/fuel_order_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="38dp"
+                    android:background="@drawable/border"
+                    android:text="Cancel"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

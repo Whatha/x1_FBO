@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/popup"
+    android:layout_width="wrap_content"
+    android:layout_height="150dp"
+    android:background="@color/blanco"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+
+    <RelativeLayout
+        android:id="@+id/fuel_btn_popup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/image_fuel"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/truck_log_quick_icon" />
+
+        <TextView
+            android:id="@+id/text_fuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/image_fuel"
+            android:layout_toEndOf="@+id/image_fuel"
+            android:paddingRight="20dp"
+            android:text="@string/popup_log"
+            android:textColor="@color/colorPrimary" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/charge_icon"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/top_off_icon" />
+
+        <TextView
+            android:id="@+id/charge_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/charge_icon"
+            android:layout_toEndOf="@+id/charge_icon"
+            android:text="@string/popup_log"
+            android:textColor="@color/colorPrimary" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/close_popup"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/close_truck"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/close_truck_icon2" />
+
+        <TextView
+            android:id="@+id/close_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/close_truck"
+            android:layout_toEndOf="@+id/close_truck"
+            android:text="@string/close"
+            android:textColor="@color/colorPrimary" />
+    </RelativeLayout>
+</LinearLayout>

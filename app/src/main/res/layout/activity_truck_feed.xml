@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grisclaro"
+    tools:context="com.whathadesign.x1_fbo.truck_feed">
+
+    <ProgressBar
+        android:id="@+id/waiting"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/truck_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="0dp"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/testing"
+        android:paddingBottom="10dp"
+        android:paddingEnd="25dp"
+        android:paddingStart="25dp"
+        android:paddingTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:layout_width="500dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/all_btn"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/avgas_btn"
+                    android:layout_weight="1"
+                    android:background="@drawable/left_tint"
+                    android:onClick="truck_feed_all"
+                    android:text="ALL"
+                    android:textColor="@color/grisclaro"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/jeta_btn"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_weight="1"
+                    android:background="@drawable/center_border"
+                    android:onClick="truck_feed_jeta"
+                    android:text="JET A"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/avgas_btn"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/jeta_btn"
+                    android:layout_weight="1"
+                    android:background="@drawable/right_border"
+                    android:onClick="truck_feed_avgas"
+                    android:text="AVGAS"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <android.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/testing"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/gradiente_principal"
+        android:minHeight="?attr/actionBarSize"
+        android:titleTextColor="#ffffff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp">
+
+            <TextView
+                android:id="@+id/bar_textito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Select Unit"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="350dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/colorPrimary"
+                    app:srcCompat="@drawable/ic_logo" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/logout"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true">
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="Log Out"
+                    android:textColor="@color/gris"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/textView22"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/colorPrimary"
+                    app:srcCompat="@drawable/close_truck_icon2" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/textView22"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/colorPrimary"
+                    app:srcCompat="@drawable/close_truck_icon2" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </android.widget.Toolbar>
+</RelativeLayout>

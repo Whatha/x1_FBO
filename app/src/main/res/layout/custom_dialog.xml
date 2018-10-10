@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_dialog_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView8"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Meter 1"
+                        android:textColor="@color/colorPrimary" />
+
+                    <EditText
+                        android:id="@+id/dialog_meters_uno"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/textView9"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/border"
+                        android:ems="10"
+                        android:inputType="numberSigned" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/hiding_meter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/dialog_meters_dos"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignStart="@+id/textView11"
+                        android:layout_below="@+id/textView11"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/border"
+                        android:ems="10"
+                        android:inputType="numberSigned" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:text="Meter 2"
+                        android:textColor="@color/colorPrimary" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout7"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/grisclaro">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="54dp"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@drawable/truck" />
+
+            <TextView
+                android:id="@+id/dialog_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@+id/imageView2"
+                android:text="J1"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/dialog_text"
+                android:layout_alignBottom="@+id/dialog_text"
+                android:layout_marginStart="45dp"
+                android:layout_toEndOf="@+id/dialog_text"
+                android:text="Verify meters"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/elimina_eliminador"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayout12"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dialog_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/relativeLayout11"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/gray_rect"
+                android:backgroundTint="@color/grismedio"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="Cancel"
+                android:textColor="@color/grisletra" />
+
+            <Button
+                android:id="@+id/dialog_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout12"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="@drawable/gray_rect"
+                android:backgroundTint="@color/verne"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="Save"
+                android:textColor="@color/blanco" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/relativeLayout7"
+            android:layout_marginTop="17dp"
+            android:text="This is the first time you have signed into J1 today. Please verify the meter numbers before continue"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

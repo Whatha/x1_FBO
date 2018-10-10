@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_main_layout"
+    android:layout_width="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_height="match_parent"
+    tools:context="com.whathadesign.x1_fbo.Login">
+
+    <ImageView
+        android:id="@+id/fondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="0dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="TODO"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/intersection" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="125dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:contentDescription="TODO"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/logo"
+            tools:ignore="VectorDrawableCompat" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignEnd="@+id/r_pass"
+            android:layout_alignTop="@+id/button4"
+            android:buttonTint="@color/blanco"
+            android:text="Remember me "
+            android:textColor="@color/cardview_light_background" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/button4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/gray_rect"
+            android:elevation="@dimen/cardview_default_elevation"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onLogin"
+            android:text="@string/login"
+            android:textColor="@color/colorPrimary" />
+
+        <RelativeLayout
+            android:id="@+id/r_name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/white_rect"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/img_name"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="23dp"
+                android:tint="@color/grisletra"
+                app:srcCompat="@drawable/user" />
+
+            <EditText
+                android:id="@+id/nme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="@string/nm"
+                android:inputType="textPersonName"
+                android:textAlignment="viewStart"
+                android:textColor="@color/grisletra"
+                android:textColorHint="@color/grisletra" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/r_pass"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/r_name"
+            android:layout_below="@+id/r_name"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/white_rect"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/img_pass"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:tint="@color/grisletra"
+                app:srcCompat="@drawable/pass" />
+
+            <EditText
+                android:id="@+id/pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/img_pass"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="11dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="@string/ps"
+                android:inputType="text|textPassword"
+                android:textAlignment="viewStart"
+                android:textColor="@color/grisletra"
+                android:textColorHint="@color/grisletra" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignStart="@+id/r_pass"
+            android:layout_below="@+id/r_pass"
+            android:layout_marginTop="5dp"
+            android:background="@color/transparente"
+            android:padding="0dp"
+            android:text="Forgot Password?"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/azulletra"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
