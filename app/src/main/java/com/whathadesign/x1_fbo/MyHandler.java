@@ -43,7 +43,7 @@ public class MyHandler extends Handler {
     public int limitador = 10;
     public Context c;
     public Activity act;
-    public boolean status=true;
+    public boolean status=false;
     Thread hilo;
     // ----------------------------------------------------------------
     // ----------------------- Constructor Clase ----------------------
@@ -105,10 +105,10 @@ public class MyHandler extends Handler {
             String cmdValue = json.getString("command");
             String systemValue = json.getString("system_status");
             String deliveryValue = json.getString("delivery_status");
-            if(systemValue.equals("W&M")){
+            if(!systemValue.equals("W&M")){
                 status=true;
             }
-            if(cmdValue.equals("2D") && !systemValue.equals("W&M")) {
+            if(cmdValue.equals("2D") && !systemValue.equals("W&M") && status) {
 
                 Float dataValue = Float.parseFloat(json.getString("Data"));
                  metro = Math.round(dataValue);
@@ -120,13 +120,12 @@ public class MyHandler extends Handler {
                 metro = Math.round(dataValue);
                 Toast.makeText(c, "Dispensando: "+metro, Toast.LENGTH_LONG).show();
             }
-            else   if(cmdValue.equals("1E") && !systemValue.equals("W&M")) {
+            else   if(cmdValue.equals("1E") && !systemValue.equals("W&M") && status) {
                 Float dataValue = Float.parseFloat(json.getString("Data"));
                 int metro = Math.round(dataValue);
                 //Toast.makeText(c, "Final: "+metro, Toast.LENGTH_LONG).show();
                 UpdateMeters(Static_variables.selected,metro,0);
                 status=false;
-
             }else {
                 Static_variables.fuel("7");
                 Static_variables.fuel("1");
