@@ -43,7 +43,8 @@ public class MyHandler extends Handler {
     public int limitador = 10;
     public Context c;
     public Activity act;
-
+    public boolean status=true;
+    Thread hilo;
     // ----------------------------------------------------------------
     // ----------------------- Constructor Clase ----------------------
     // ----------------------------------------------------------------
@@ -104,23 +105,48 @@ public class MyHandler extends Handler {
             String cmdValue = json.getString("command");
             String systemValue = json.getString("system_status");
             String deliveryValue = json.getString("delivery_status");
+            if(systemValue.equals("W&M")){
+                status=true;
+            }
             if(cmdValue.equals("2D") && !systemValue.equals("W&M")) {
 
                 Float dataValue = Float.parseFloat(json.getString("Data"));
                  metro = Math.round(dataValue);
-                Toast.makeText(c, "Qty dispensed: "+metro, Toast.LENGTH_LONG).show();
+                //Toast.makeText(c, "Qty dispensed: "+metro, Toast.LENGTH_LONG).show();
+                status=false;
+            }else if(cmdValue.equals("2D")  && systemValue.equals("W&M")) {
 
-            }else   if(cmdValue.equals("1E") && !systemValue.equals("W&M")) {
+                Float dataValue = Float.parseFloat(json.getString("Data"));
+                metro = Math.round(dataValue);
+                Toast.makeText(c, "Dispensando: "+metro, Toast.LENGTH_LONG).show();
+            }
+            else   if(cmdValue.equals("1E") && !systemValue.equals("W&M")) {
                 Float dataValue = Float.parseFloat(json.getString("Data"));
                 int metro = Math.round(dataValue);
-                Toast.makeText(c, "Final: "+metro, Toast.LENGTH_LONG).show();
-
-                 UpdateMeters(Static_variables.selected,metro,0);
+                //Toast.makeText(c, "Final: "+metro, Toast.LENGTH_LONG).show();
+                UpdateMeters(Static_variables.selected,metro,0);
+                status=false;
 
             }else {
                 Static_variables.fuel("7");
                 Static_variables.fuel("1");
+                hilo = new Thread() {
+                    @Override
+                    public void run() {
+                        try {
+                            while(status) {
+                                sleep(300);
+                                Static_variables.fuel("7");
+                                Static_variables.fuel("1");
 
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+
+                hilo.start();
             }
         } catch (JSONException e) {
             e.printStackTrace();

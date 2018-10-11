@@ -18,7 +18,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b483a5e-b3ee-432d-b344-1e57befec75c" name="Default" comment="" />
+    <list default="true" id="1b483a5e-b3ee-432d-b344-1e57befec75c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,11 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Order_view.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Order_view.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="679" column="25" selection-start-line="679" selection-start-column="25" selection-end-line="679" selection-end-column="25" />
+            <state relative-caret-position="262">
+              <caret line="683" column="60" selection-start-line="683" selection-start-column="51" selection-end-line="683" selection-end-column="60" />
               <folding>
                 <element signature="e#2665#3028#0" expanded="true" />
                 <element signature="e#3027#3028#0" expanded="true" />
@@ -113,13 +121,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="208" selection-start-line="208" selection-end-line="208" />
+            <state relative-caret-position="480">
+              <caret line="141" column="29" lean-forward="true" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4998#5557#0" expanded="true" />
+                <element signature="e#5556#5557#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -3506,9 +3516,9 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Fuel_feed.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Log_adapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/ticket_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java" />
       </list>
     </option>
   </component>
@@ -3723,11 +3733,11 @@
       <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49573562" weight="0.33184856" />
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.32962137" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="15" sideWeight="0.59022933" visible="true" weight="0.3234995" />
+      <window_info anchor="bottom" id="Logcat" order="15" sideWeight="0.59022933" visible="true" weight="0.3234995" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="1" />
       <window_info anchor="right" id="Designer" order="1" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49335548" visible="true" weight="0.16450648" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49335548" visible="true" weight="0.16450648" />
       <window_info anchor="bottom" id="Build" order="16" sideWeight="0.51545364" weight="0.3234995" />
       <window_info anchor="right" id="Gradle" order="4" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
@@ -3754,6 +3764,18 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java</url>
+          <line>174</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java">
@@ -3805,6 +3827,8 @@
           <caret line="141" column="50" selection-start-line="141" selection-start-column="49" selection-end-line="141" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4998#5557#0" expanded="true" />
+            <element signature="e#5556#5557#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3900,10 +3924,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/HexCodeGenerator.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ticket_layout.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-1709">
+          <caret line="219" column="61" selection-start-line="219" selection-start-column="61" selection-end-line="219" selection-end-column="61" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="60" column="25" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="25" />
+        <state relative-caret-position="262">
+          <caret line="683" column="60" selection-start-line="683" selection-start-column="51" selection-end-line="683" selection-end-column="60" />
+          <folding>
+            <element signature="e#2665#3028#0" expanded="true" />
+            <element signature="e#3027#3028#0" expanded="true" />
+            <element signature="e#5430#5788#0" expanded="true" />
+            <element signature="e#5787#5788#0" expanded="true" />
+            <element signature="e#16518#17515#0" expanded="true" />
+            <element signature="e#17514#17515#0" expanded="true" />
+            <element signature="e#17552#18191#0" expanded="true" />
+            <element signature="e#18190#18191#0" expanded="true" />
+            <element signature="e#18303#18459#0" expanded="true" />
+            <element signature="e#18458#18459#0" expanded="true" />
+            <element signature="e#22995#23011#0" expanded="true" />
+            <element signature="e#35035#36277#0" expanded="true" />
+            <element signature="e#36276#36277#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3921,24 +3970,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/HexCodeGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="208" selection-start-line="208" selection-end-line="208" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="585">
+          <caret line="60" column="25" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="25" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ticket_layout.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-1709">
-          <caret line="219" column="61" selection-start-line="219" selection-start-column="61" selection-end-line="219" selection-end-column="61" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Static_variables.java">
@@ -3948,24 +3984,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="679" column="25" selection-start-line="679" selection-start-column="25" selection-end-line="679" selection-end-column="25" />
+        <state relative-caret-position="480">
+          <caret line="141" column="29" lean-forward="true" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
           <folding>
-            <element signature="e#2665#3028#0" expanded="true" />
-            <element signature="e#3027#3028#0" expanded="true" />
-            <element signature="e#5430#5788#0" expanded="true" />
-            <element signature="e#5787#5788#0" expanded="true" />
-            <element signature="e#16518#17515#0" expanded="true" />
-            <element signature="e#17514#17515#0" expanded="true" />
-            <element signature="e#17552#18191#0" expanded="true" />
-            <element signature="e#18190#18191#0" expanded="true" />
-            <element signature="e#18303#18459#0" expanded="true" />
-            <element signature="e#18458#18459#0" expanded="true" />
-            <element signature="e#22995#23011#0" expanded="true" />
-            <element signature="e#35035#36277#0" expanded="true" />
-            <element signature="e#36276#36277#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#4998#5557#0" expanded="true" />
+            <element signature="e#5556#5557#0" expanded="true" />
           </folding>
         </state>
       </provider>

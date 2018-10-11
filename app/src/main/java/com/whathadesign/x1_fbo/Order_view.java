@@ -693,7 +693,7 @@ public ProgressDialog dd;
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
                         act.dd.dismiss();
-                        Toast.makeText(act,"Error!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(act,"Database Error!",Toast.LENGTH_SHORT).show();
                     }
                 }) {
 
