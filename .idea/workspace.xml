@@ -3,6 +3,7 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
+        <device id="Nexus S" />
         <device id="Nexus 10" />
       </config>
     </shared>
@@ -26,8 +27,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ticket_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ticket_layout.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,22 +52,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Order_view.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Order_view.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="223" column="9" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
+            <state relative-caret-position="428">
+              <caret line="546" column="115" selection-start-line="546" selection-start-column="115" selection-end-line="546" selection-end-column="115" />
               <folding>
                 <element signature="e#2665#3028#0" expanded="true" />
                 <element signature="e#3027#3028#0" expanded="true" />
                 <element signature="e#5430#5788#0" expanded="true" />
                 <element signature="e#5787#5788#0" expanded="true" />
-                <element signature="e#16352#17345#0" expanded="true" />
-                <element signature="e#17344#17345#0" expanded="true" />
-                <element signature="e#17382#18021#0" expanded="true" />
-                <element signature="e#18020#18021#0" expanded="true" />
-                <element signature="e#18133#18289#0" expanded="true" />
-                <element signature="e#18288#18289#0" expanded="true" />
+                <element signature="e#16518#17515#0" expanded="true" />
+                <element signature="e#17514#17515#0" expanded="true" />
+                <element signature="e#17552#18191#0" expanded="true" />
+                <element signature="e#18190#18191#0" expanded="true" />
+                <element signature="e#18303#18459#0" expanded="true" />
+                <element signature="e#18458#18459#0" expanded="true" />
                 <element signature="e#22995#23011#0" expanded="true" />
                 <element signature="e#35035#36277#0" expanded="true" />
                 <element signature="e#36276#36277#0" expanded="true" />
@@ -88,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ticket_layout.xml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="-1709">
-              <caret line="221" column="61" selection-start-line="221" selection-start-column="61" selection-end-line="221" selection-end-column="61" />
+              <caret line="219" column="61" selection-start-line="219" selection-start-column="61" selection-end-line="219" selection-end-column="61" />
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer2">
@@ -105,7 +106,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Static_variables.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Static_variables.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Static_variables.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
@@ -126,8 +127,8 @@
       <file leaf-file-name="MyHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="203" column="24" selection-start-line="203" selection-start-column="24" selection-end-line="204" selection-end-column="48" />
+            <state relative-caret-position="361">
+              <caret line="208" selection-start-line="208" selection-end-line="208" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -3515,9 +3516,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Fuel_feed.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/ticket_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Log_adapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/ticket_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java" />
       </list>
     </option>
@@ -3775,12 +3776,12 @@
             <element signature="e#3027#3028#0" expanded="true" />
             <element signature="e#5430#5788#0" expanded="true" />
             <element signature="e#5787#5788#0" expanded="true" />
-            <element signature="e#16352#17345#0" expanded="true" />
-            <element signature="e#17344#17345#0" expanded="true" />
-            <element signature="e#17382#18021#0" expanded="true" />
-            <element signature="e#18020#18021#0" expanded="true" />
-            <element signature="e#18133#18289#0" expanded="true" />
-            <element signature="e#18288#18289#0" expanded="true" />
+            <element signature="e#16518#17515#0" expanded="true" />
+            <element signature="e#17514#17515#0" expanded="true" />
+            <element signature="e#17552#18191#0" expanded="true" />
+            <element signature="e#18190#18191#0" expanded="true" />
+            <element signature="e#18303#18459#0" expanded="true" />
+            <element signature="e#18458#18459#0" expanded="true" />
             <element signature="e#22995#23011#0" expanded="true" />
             <element signature="e#35035#36277#0" expanded="true" />
             <element signature="e#36276#36277#0" expanded="true" />
@@ -3917,52 +3918,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ticket_layout.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-1709">
-          <caret line="221" column="61" selection-start-line="221" selection-start-column="61" selection-end-line="221" selection-end-column="61" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Log_adapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="251" column="20" selection-start-line="251" selection-start-column="20" selection-end-line="251" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="203" column="24" selection-start-line="203" selection-start-column="24" selection-end-line="204" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="223" column="9" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
-          <folding>
-            <element signature="e#2665#3028#0" expanded="true" />
-            <element signature="e#3027#3028#0" expanded="true" />
-            <element signature="e#5430#5788#0" expanded="true" />
-            <element signature="e#5787#5788#0" expanded="true" />
-            <element signature="e#16352#17345#0" expanded="true" />
-            <element signature="e#17344#17345#0" expanded="true" />
-            <element signature="e#17382#18021#0" expanded="true" />
-            <element signature="e#18020#18021#0" expanded="true" />
-            <element signature="e#18133#18289#0" expanded="true" />
-            <element signature="e#18288#18289#0" expanded="true" />
-            <element signature="e#22995#23011#0" expanded="true" />
-            <element signature="e#35035#36277#0" expanded="true" />
-            <element signature="e#36276#36277#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3973,10 +3932,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="208" selection-start-line="208" selection-end-line="208" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ticket_layout.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-1709">
+          <caret line="219" column="61" selection-start-line="219" selection-start-column="61" selection-end-line="219" selection-end-column="61" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Static_variables.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="178" selection-start-line="178" selection-end-line="178" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="546" column="115" selection-start-line="546" selection-start-column="115" selection-end-line="546" selection-end-column="115" />
+          <folding>
+            <element signature="e#2665#3028#0" expanded="true" />
+            <element signature="e#3027#3028#0" expanded="true" />
+            <element signature="e#5430#5788#0" expanded="true" />
+            <element signature="e#5787#5788#0" expanded="true" />
+            <element signature="e#16518#17515#0" expanded="true" />
+            <element signature="e#17514#17515#0" expanded="true" />
+            <element signature="e#17552#18191#0" expanded="true" />
+            <element signature="e#18190#18191#0" expanded="true" />
+            <element signature="e#18303#18459#0" expanded="true" />
+            <element signature="e#18458#18459#0" expanded="true" />
+            <element signature="e#22995#23011#0" expanded="true" />
+            <element signature="e#35035#36277#0" expanded="true" />
+            <element signature="e#36276#36277#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

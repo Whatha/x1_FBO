@@ -536,7 +536,7 @@ public class Order_view extends AppCompatActivity {
             } else {
                 fsii.setBackground(activity.getResources().getDrawable(R.drawable.fsii_2));
             }
-            //total_text.setText(String.valueOf(total));
+            qty_requested.setText(String.valueOf(total));
 
         }
 
@@ -544,7 +544,7 @@ public class Order_view extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.ticket_complete:
-                    completeJson(Static_variables.order, Static_variables.selected, (Order_view) activity);
+                    completeJson(Static_variables.order, Static_variables.selected, (Order_view) activity,qty1,qty2);
                     break;
                 case R.id.ticket_cancel:
                     dismiss();
@@ -596,7 +596,7 @@ public class Order_view extends AppCompatActivity {
 
     }
 public ProgressDialog dd;
-    private static void completeJson(final Order o, final Truck t, final Order_view act) {
+    private static void completeJson(final Order o, final Truck t, final Order_view act, int qty1, int qty2) {
         RequestQueue MyRequestQueue = Volley.newRequestQueue(act);
         act.dd = new ProgressDialog(act);
         act.dd.setCanceledOnTouchOutside(false);
@@ -621,9 +621,9 @@ public ProgressDialog dd;
                                 .put("companyId", act.companyId)
                                 .put("warehouseId", String.valueOf(t.id))
                         .put("meterId", String.valueOf(t.getMetros().get(0).id))
-                        .put("startingMeter", String.valueOf(t.getMetros().get(0).currentValue))
-                        .put("endingMeter", act.meter1end.getText().toString())
-                        .put("qty", act.meter1total.getText().toString())
+                        .put("startingMeter", String.valueOf((t.getMetros().get(0).currentValue)-qty1))
+                        .put("endingMeter", String.valueOf(t.getMetros().get(0).currentValue))
+                        .put("qty", String.valueOf(qty1))
                         .put("tailAircraftId", act.tailAircraftId);
 
                     }
@@ -637,10 +637,10 @@ public ProgressDialog dd;
                         .put("companyId", act.companyId)
                         .put("warehouseId", String.valueOf(t.id))
                         .put("meterId", String.valueOf(t.getMetros().get(1).id))
-                        .put("startingMeter", String.valueOf(t.getMetros().get(1).currentValue))
-                        .put("endingMeter", act.meter2end.getText().toString())
-                        .put("qty", act.meter2total.getText().toString())
-                        .put("tailAircraftId", act.tailAircraftId);
+                                .put("startingMeter", String.valueOf((t.getMetros().get(1).currentValue)-qty2))
+                                .put("endingMeter", String.valueOf(t.getMetros().get(1).currentValue))
+                                .put("qty", String.valueOf(qty2))
+                                .put("tailAircraftId", act.tailAircraftId);
                     }
                     operationDetails.put(meter2);
 
@@ -677,7 +677,7 @@ public ProgressDialog dd;
                         act.dialog.dismiss();
                         Toast.makeText(act,"Start fueling",Toast.LENGTH_SHORT).show();
                         Static_variables.fuel(Static_variables.order.tailNbr.toString());
-                       // dd.dismiss();
+                        act.dd.dismiss();
                         Intent b = new Intent(act, Fuel_feed.class);
                         b.putExtra("status", "Fueling completed!");
                         act.startActivity(b);
