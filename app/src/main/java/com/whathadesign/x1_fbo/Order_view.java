@@ -222,6 +222,8 @@ public class Order_view extends AppCompatActivity {
         dd.setContentView(R.layout.dialogo_progreso);
         Toast.makeText(getApplicationContext(),"Start fueling",Toast.LENGTH_SHORT).show();
         Static_variables.fuel(Static_variables.order.tailNbr.toString());
+        /*dialog = new Order_view.CustomDialog(this, 1321, 12, Static_variables.order.tailNbr.toString(), Static_variables.order.fsii,10,10);
+        dialog.show();*/
     }
     public void onFueling(View v) {
 
@@ -534,7 +536,7 @@ public class Order_view extends AppCompatActivity {
             } else {
                 fsii.setBackground(activity.getResources().getDrawable(R.drawable.fsii_2));
             }
-            total_text.setText(String.valueOf(total));
+            //total_text.setText(String.valueOf(total));
 
         }
 

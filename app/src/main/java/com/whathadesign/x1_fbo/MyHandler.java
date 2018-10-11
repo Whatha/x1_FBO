@@ -115,7 +115,7 @@ public class MyHandler extends Handler {
                 int metro = Math.round(dataValue);
                 Toast.makeText(c, "Final: "+metro, Toast.LENGTH_LONG).show();
 
-                // UpdateMeters(Static_variables.selected,metro,0);
+                 UpdateMeters(Static_variables.selected,metro,0);
 
             }else {
                 Static_variables.fuel("7");
