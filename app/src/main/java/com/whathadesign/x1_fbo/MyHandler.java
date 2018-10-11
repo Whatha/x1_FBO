@@ -91,7 +91,7 @@ public class MyHandler extends Handler {
             String cmdValue = json.getString("command");
             String systemValue = json.getString("system_status");
             String deliveryValue = json.getString("delivery_status");
-            if(cmdValue.equals("2D") && !systemValue.equals("W&M")) {
+            if(cmdValue.equals("2D")) {
 
                 Toast.makeText(c, "Fueled: "+json.getString("Data"), Toast.LENGTH_LONG).show();
                 Float dataValue = Float.parseFloat(json.getString("Data"));
