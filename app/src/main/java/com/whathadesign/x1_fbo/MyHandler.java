@@ -43,7 +43,7 @@ public class MyHandler extends Handler {
     public int limitador = 10;
     public Context c;
     public Activity act;
-    public boolean status=false;
+    public boolean status=true;
     Thread hilo;
     // ----------------------------------------------------------------
     // ----------------------- Constructor Clase ----------------------
