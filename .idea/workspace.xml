@@ -10,15 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b483a5e-b3ee-432d-b344-1e57befec75c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java" />
     </list>
@@ -47,8 +38,8 @@
       <file leaf-file-name="Order_view.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="657" column="21" lean-forward="false" selection-start-line="657" selection-start-column="21" selection-end-line="657" selection-end-column="21" />
+            <state relative-caret-position="272">
+              <caret line="656" column="25" lean-forward="false" selection-start-line="656" selection-start-column="25" selection-end-line="656" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -57,8 +48,18 @@
       <file leaf-file-name="Static_variables.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Static_variables.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="433" column="36" lean-forward="false" selection-start-line="433" selection-start-column="36" selection-end-line="433" selection-end-column="36" />
+            <state relative-caret-position="303">
+              <caret line="446" column="47" lean-forward="false" selection-start-line="446" selection-start-column="47" selection-end-line="446" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HexCodeGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/HexCodeGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-11">
+              <caret line="60" column="25" lean-forward="false" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -67,8 +68,8 @@
       <file leaf-file-name="MyHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="106" column="42" lean-forward="false" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
+            <state relative-caret-position="286">
+              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -3791,24 +3792,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Order_view.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="657" column="21" lean-forward="false" selection-start-line="657" selection-start-column="21" selection-end-line="657" selection-end-column="21" />
+        <state relative-caret-position="272">
+          <caret line="656" column="25" lean-forward="false" selection-start-line="656" selection-start-column="25" selection-end-line="656" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/Static_variables.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="433" column="36" lean-forward="false" selection-start-line="433" selection-start-column="36" selection-end-line="433" selection-end-column="36" />
+        <state relative-caret-position="303">
+          <caret line="446" column="47" lean-forward="false" selection-start-line="446" selection-start-column="47" selection-end-line="446" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/HexCodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="60" column="25" lean-forward="false" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/whathadesign/x1_fbo/MyHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="106" column="42" lean-forward="false" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
+        <state relative-caret-position="286">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding />
         </state>
       </provider>

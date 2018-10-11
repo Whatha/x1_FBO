@@ -654,7 +654,7 @@ public ProgressDialog dd;
                         dialog.dismiss();
                         Toast.makeText(getApplicationContext(),"Start fueling",Toast.LENGTH_SHORT).show();
                         Static_variables.fuel(Static_variables.order.tailNbr.toString());
-                        dd.dismiss();
+                       // dd.dismiss();
                     }
                 },
                 new Response.ErrorListener() {

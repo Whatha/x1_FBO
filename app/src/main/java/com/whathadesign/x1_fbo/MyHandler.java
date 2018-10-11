@@ -91,21 +91,22 @@ public class MyHandler extends Handler {
             String cmdValue = json.getString("command");
             String systemValue = json.getString("system_status");
             String deliveryValue = json.getString("delivery_status");
-            if(cmdValue.equals("2D")) {
+            if(cmdValue.equals("2D") && !systemValue.equals("W&M")) {
 
                 Float dataValue = Float.parseFloat(json.getString("Data"));
                 int metro = Math.round(dataValue);
-                Toast.makeText(c, "Fueled: "+metro, Toast.LENGTH_LONG).show();
-               // mActivity.get().dd.dismiss();
+                Toast.makeText(c, "Qty dispensed: "+metro, Toast.LENGTH_LONG).show();
 
-               // Static_variables.selected.getMetros().get(0).currentValue=metro;
-              /*  Intent a = new Intent(c, Fuel_feed.class);
+            }else   if(cmdValue.equals("1E") && !systemValue.equals("W&M")) {
+                Float dataValue = Float.parseFloat(json.getString("Data"));
+                int metro = Math.round(dataValue);
+                mActivity.get().dd.dismiss();
+                Static_variables.selected.getMetros().get(0).currentValue=metro;
+                Intent a = new Intent(c, Fuel_feed.class);
                 a.putExtra("status", "Fueling completed!");
-                c.startActivity(a);*/
-            }else{
-                Static_variables.fuel("1");
-                Toast.makeText(c, "Wait: ", Toast.LENGTH_LONG).show();
-
+                c.startActivity(a);
+            }else {
+                Static_variables.fuel("7");
             }
         } catch (JSONException e) {
             e.printStackTrace();
