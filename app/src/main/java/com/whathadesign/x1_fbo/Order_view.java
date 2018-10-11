@@ -226,8 +226,9 @@ public class Order_view extends AppCompatActivity {
         dialog.show();*/
     }
     public void onFueling(View v) {
+        completeJson(Static_variables.order, Static_variables.selected, (Order_view) this,123,123);
 
-        seguir();
+        //seguir();
 
     }
 
@@ -615,8 +616,7 @@ public ProgressDialog dd;
             JSONObject meter1 = new JSONObject();
             JSONObject meter2 = new JSONObject();
             try {
-                if(!act.meter1total.getText().toString().equals("")) {
-                    if (Integer.parseInt(act.meter1total.getText().toString()) != 0) {
+                    if (t.getMetros().get(0).currentValue != 0) {
                         meter1.put("itemId", act.itemId)
                                 .put("companyId", act.companyId)
                                 .put("warehouseId", String.valueOf(t.id))
@@ -629,22 +629,23 @@ public ProgressDialog dd;
                     }
                     operationDetails.put(meter1);
 
-                }
-                if(!act.meter2total.getText().toString().equals("")) {
 
-                    if (Integer.parseInt(act.meter2total.getText().toString()) != 0 && t.getMetros().size() > 1) {
-                        meter2.put("ItemId", act.itemId)
-                        .put("companyId", act.companyId)
-                        .put("warehouseId", String.valueOf(t.id))
-                        .put("meterId", String.valueOf(t.getMetros().get(1).id))
-                                .put("startingMeter", String.valueOf((t.getMetros().get(1).currentValue)-qty2))
-                                .put("endingMeter", String.valueOf(t.getMetros().get(1).currentValue))
-                                .put("qty", String.valueOf(qty2))
-                                .put("tailAircraftId", act.tailAircraftId);
+
+                    if ( t.getMetros().size() > 1) {
+                        if(t.getMetros().get(1).currentValue != 0) {
+                            meter2.put("ItemId", act.itemId)
+                                    .put("companyId", act.companyId)
+                                    .put("warehouseId", String.valueOf(t.id))
+                                    .put("meterId", String.valueOf(t.getMetros().get(1).id))
+                                    .put("startingMeter", String.valueOf((t.getMetros().get(1).currentValue) - qty2))
+                                    .put("endingMeter", String.valueOf(t.getMetros().get(1).currentValue))
+                                    .put("qty", String.valueOf(qty2))
+                                    .put("tailAircraftId", act.tailAircraftId);
+                        }
                     }
                     operationDetails.put(meter2);
 
-                }
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -674,7 +675,9 @@ public ProgressDialog dd;
                     @Override
 
                     public void onResponse(JSONObject response) {
-                        act.dialog.dismiss();
+                        if(act.dialog.isShowing()) {
+                            act.dialog.dismiss();
+                        }
                         Toast.makeText(act,"Start fueling",Toast.LENGTH_SHORT).show();
                         Static_variables.fuel(Static_variables.order.tailNbr.toString());
                         act.dd.dismiss();
