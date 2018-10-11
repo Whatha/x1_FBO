@@ -65,7 +65,7 @@ public class Order_view extends AppCompatActivity {
     private LinearLayout status;
     private Button acept;
     boolean acepted = false;
-    CustomDialog dialog;
+   public CustomDialog dialog;
     private MyHandler mHandler;
 
     @Override
@@ -214,7 +214,22 @@ public class Order_view extends AppCompatActivity {
     EditText meter2end;
     EditText meter2total;
 
+    public void seguir(){
+        dd = new ProgressDialog(this);
+        dd.setCanceledOnTouchOutside(false);
+        dd.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.transparente)));
+        dd.show();
+        dd.setContentView(R.layout.dialogo_progreso);
+        Toast.makeText(getApplicationContext(),"Start fueling",Toast.LENGTH_SHORT).show();
+        Static_variables.fuel(Static_variables.order.tailNbr.toString());
+    }
     public void onFueling(View v) {
+
+        seguir();
+
+    }
+
+    public void openText(){
         final LayoutInflater inflater = (LayoutInflater) this.getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final ViewGroup parent = (ViewGroup) findViewById(R.id.status);
         final View myView = findViewById(R.id.order_accept);
@@ -281,13 +296,13 @@ public class Order_view extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                 if(meter2end.isFocused()) {
+                if(meter2end.isFocused()) {
                     if (meter2.getText().length() > 0 && meter2end.getText().length() > 0) {
                         meter2total.setText(Static_variables.calculoAuto(meter2.getText().toString(), meter2end.getText().toString()));
                     } else {
                         meter2total.setText("0");
                     }
-                    }
+                }
             }
 
             @Override
@@ -316,13 +331,13 @@ public class Order_view extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-             if(meter1total.isFocused()) {
+                if(meter1total.isFocused()) {
                     if (meter1.getText().length() > 0 && meter1total.getText().length() > 0) {
-                            meter1end.setText(Static_variables.calculoAutoDos(meter1.getText().toString(), meter1total.getText().toString()));
-                        } else {
-                            meter1end.setText("0");
-                        }
+                        meter1end.setText(Static_variables.calculoAutoDos(meter1.getText().toString(), meter1total.getText().toString()));
+                    } else {
+                        meter1end.setText("0");
                     }
+                }
             }
 
             @Override
@@ -343,7 +358,7 @@ public class Order_view extends AppCompatActivity {
             }
         };
 
-         TextWatcher d = new TextWatcher() {
+        TextWatcher d = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -351,13 +366,13 @@ public class Order_view extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-             if(meter2total.isFocused()) {
+                if(meter2total.isFocused()) {
                     if (meter2.getText().length() > 0 && meter2total.getText().length() > 0) {
-                            meter2end.setText(Static_variables.calculoAutoDos(meter2.getText().toString(), meter2total.getText().toString()));
-                        } else {
-                            meter2end.setText("0");
-                        }
+                        meter2end.setText(Static_variables.calculoAutoDos(meter2.getText().toString(), meter2total.getText().toString()));
+                    } else {
+                        meter2end.setText("0");
                     }
+                }
             }
 
             @Override
@@ -397,14 +412,14 @@ public class Order_view extends AppCompatActivity {
             public void onClick(View view) {
                 System.out.println("Validacion: "+validacion(meter1total.getText().toString(),meter2total.getText().toString()));
                 if(meter1end.getText().length()<1 && meter2end.getText().length()<1){
-                        Toast.makeText(getApplicationContext(), "Put the meter info", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Put the meter info", Toast.LENGTH_SHORT).show();
 
                 }else if(!validacion(meter1total.getText().toString(),meter2total.getText().toString())){
                     Toast.makeText(getApplicationContext(), "Quantity must be more than 0", Toast.LENGTH_SHORT).show();
 
                 }else {
-                    dialog = new CustomDialog(actividad, String.valueOf(Static_variables.order.qty), Static_variables.order.tailNbr.toString(), meter1total.getText().toString(), meter2total.getText().toString(), Static_variables.order.fsii);
-                    dialog.show();
+                    //dialog = new CustomDialog(actividad, String.valueOf(Static_variables.order.qty), Static_variables.order.tailNbr.toString(), meter1total.getText().toString(), meter2total.getText().toString(), Static_variables.order.fsii);
+                    //dialog.show();
                 }
             }
         });
@@ -455,24 +470,25 @@ public class Order_view extends AppCompatActivity {
         a.show();
     }
 
-    private class CustomDialog extends Dialog implements
+    public static class CustomDialog extends Dialog implements
             android.view.View.OnClickListener {
         public Activity activity;
         public Button complete, cancel;
-        private TextView qty_requested, tailnbr, meter1_delivered, meter2_delivered, total_text;
+        private TextView qty_requested, tailnbr, meter1_start, meter2_start, meter1_qty, meter2_qty,meter1_delivered, meter2_delivered, total_text;
         private Button fsii;
-        private String qty, tail, meter1, meter2;
-        private int total;
+        private String  tail;
+        private int total, meter1total, meter2total,qty1,qty2;
         private boolean isFsii;
         String texto;
 
-        public CustomDialog(Activity activity, String qty, String tail, String meter1, String meter2, boolean fsii) {
+        public CustomDialog(Activity activity, int qty1, int qty2, String tail, boolean fsii, int meter1total, int meter2total) {
             super(activity);
             this.activity = activity;
-            this.qty = qty;
+            this.qty1=qty1;
+            this.qty2=qty2;
             this.tail = tail;
-            this.meter1 = meter1;
-            this.meter2 = meter2;
+            this.meter1total=meter1total;
+            this.meter2total=meter2total;
             isFsii = fsii;
         }
 
@@ -488,26 +504,31 @@ public class Order_view extends AppCompatActivity {
             cancel.setOnClickListener(this);
             qty_requested = (TextView) findViewById(R.id.ticket_qry_rqst);
             tailnbr = (TextView) findViewById(R.id.ticket_tail);
-            meter1_delivered = (TextView) findViewById(R.id.ticket_meter1);
-            meter2_delivered = (TextView) findViewById(R.id.ticker_meter2);
+            meter1_start = (TextView) findViewById(R.id.ticket_meter1_start);
+            meter2_start = (TextView) findViewById(R.id.ticket_meter2_start);
+            meter1_qty = (TextView) findViewById(R.id.ticker_meter1Qty);
+            meter2_qty = (TextView) findViewById(R.id.ticker_meter2_qty);
+            meter1_delivered = (TextView) findViewById(R.id.ticket_meter1_total);
+            meter2_delivered = (TextView) findViewById(R.id.tick_meter2_total);
             fsii = (Button) findViewById(R.id.ticket_fsii);
-            total_text = (TextView) findViewById(R.id.tick_tl);
+            //total_text = (TextView) findViewById(R.id.tick_tl);
             int a=0,b=0;
-            if(!meter1.equals("")){
-               a= Integer.parseInt(meter1);
-            }else{
-                a=0;
-            }
 
-            if(!meter2.equals("")){ b = Integer.parseInt(meter2);}else{
-                b=0;
-            }
 
-            total = a + b;
-            qty_requested.setText(qty);
+            total = qty1 + qty2;
             tailnbr.setText(tail);
-            meter1_delivered.setText(meter1);
-            meter2_delivered.setText(meter2);
+            meter1_delivered.setText(String.valueOf(meter1total));
+            meter2_delivered.setText(String.valueOf(meter2total));
+            meter1_qty.setText(String.valueOf(qty1));
+            meter2_qty.setText(String.valueOf(qty2));
+            int mt1=0,mt2=0;
+
+            mt1=meter1total-qty1;
+            mt2=meter2total-qty2;
+
+            meter1_start.setText(String.valueOf(mt1));
+            meter2_start.setText(String.valueOf(mt2));
+
             if (isFsii) {
                 fsii.setBackground(activity.getResources().getDrawable(R.drawable.fsii_1));
             } else {
@@ -521,7 +542,7 @@ public class Order_view extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.ticket_complete:
-                    completeJson(Static_variables.order, Static_variables.selected);
+                    completeJson(Static_variables.order, Static_variables.selected, (Order_view) activity);
                     break;
                 case R.id.ticket_cancel:
                     dismiss();
@@ -573,13 +594,13 @@ public class Order_view extends AppCompatActivity {
 
     }
 public ProgressDialog dd;
-    private void completeJson(final Order o, final Truck t) {
-        RequestQueue MyRequestQueue = Volley.newRequestQueue(getApplicationContext());
-        dd = new ProgressDialog(this);
-        dd.setCanceledOnTouchOutside(false);
-        dd.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.transparente)));
-        dd.show();
-        dd.setContentView(R.layout.dialogo_progreso);
+    private static void completeJson(final Order o, final Truck t, final Order_view act) {
+        RequestQueue MyRequestQueue = Volley.newRequestQueue(act);
+        act.dd = new ProgressDialog(act);
+        act.dd.setCanceledOnTouchOutside(false);
+        act.dd.getWindow().setBackgroundDrawable(new ColorDrawable(act.getResources().getColor(R.color.transparente)));
+        act. dd.show();
+        act. dd.setContentView(R.layout.dialogo_progreso);
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         String d = df.format(Calendar.getInstance().getTime());
         String date = d;
@@ -592,32 +613,32 @@ public ProgressDialog dd;
             JSONObject meter1 = new JSONObject();
             JSONObject meter2 = new JSONObject();
             try {
-                if(!meter1total.getText().toString().equals("")) {
-                    if (Integer.parseInt(meter1total.getText().toString()) != 0) {
-                        meter1.put("itemId", itemId)
-                                .put("companyId", companyId)
+                if(!act.meter1total.getText().toString().equals("")) {
+                    if (Integer.parseInt(act.meter1total.getText().toString()) != 0) {
+                        meter1.put("itemId", act.itemId)
+                                .put("companyId", act.companyId)
                                 .put("warehouseId", String.valueOf(t.id))
                         .put("meterId", String.valueOf(t.getMetros().get(0).id))
                         .put("startingMeter", String.valueOf(t.getMetros().get(0).currentValue))
-                        .put("endingMeter", meter1end.getText().toString())
-                        .put("qty", meter1total.getText().toString())
-                        .put("tailAircraftId", tailAircraftId);
+                        .put("endingMeter", act.meter1end.getText().toString())
+                        .put("qty", act.meter1total.getText().toString())
+                        .put("tailAircraftId", act.tailAircraftId);
 
                     }
                     operationDetails.put(meter1);
 
                 }
-                if(!meter2total.getText().toString().equals("")) {
+                if(!act.meter2total.getText().toString().equals("")) {
 
-                    if (Integer.parseInt(meter2total.getText().toString()) != 0 && t.getMetros().size() > 1) {
-                        meter2.put("ItemId", itemId)
-                        .put("companyId", companyId)
+                    if (Integer.parseInt(act.meter2total.getText().toString()) != 0 && t.getMetros().size() > 1) {
+                        meter2.put("ItemId", act.itemId)
+                        .put("companyId", act.companyId)
                         .put("warehouseId", String.valueOf(t.id))
                         .put("meterId", String.valueOf(t.getMetros().get(1).id))
                         .put("startingMeter", String.valueOf(t.getMetros().get(1).currentValue))
-                        .put("endingMeter", meter2end.getText().toString())
-                        .put("qty", meter2total.getText().toString())
-                        .put("tailAircraftId", tailAircraftId);
+                        .put("endingMeter", act.meter2end.getText().toString())
+                        .put("qty", act.meter2total.getText().toString())
+                        .put("tailAircraftId", act.tailAircraftId);
                     }
                     operationDetails.put(meter2);
 
@@ -651,10 +672,14 @@ public ProgressDialog dd;
                     @Override
 
                     public void onResponse(JSONObject response) {
-                        dialog.dismiss();
-                        Toast.makeText(getApplicationContext(),"Start fueling",Toast.LENGTH_SHORT).show();
+                        act.dialog.dismiss();
+                        Toast.makeText(act,"Start fueling",Toast.LENGTH_SHORT).show();
                         Static_variables.fuel(Static_variables.order.tailNbr.toString());
                        // dd.dismiss();
+                        Intent b = new Intent(act, Fuel_feed.class);
+                        b.putExtra("status", "Fueling completed!");
+                        act.startActivity(b);
+
                     }
                 },
                 new Response.ErrorListener() {
@@ -662,8 +687,8 @@ public ProgressDialog dd;
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
-                        dd.dismiss();
-                        Toast.makeText(getApplicationContext(),"Error!",Toast.LENGTH_SHORT).show();
+                        act.dd.dismiss();
+                        Toast.makeText(act,"Error!",Toast.LENGTH_SHORT).show();
                     }
                 }) {
 

@@ -244,10 +244,10 @@ public class Log_adapter extends RecyclerView.Adapter<Log_adapter.PersonViewHold
             cancel.setOnClickListener(this);
             qty_requested = (TextView) findViewById(R.id.ticket_qry_rqst);
             tailnbr = (TextView) findViewById(R.id.ticket_tail);
-            meter1_delivered = (TextView) findViewById(R.id.ticket_meter1);
-            meter2_delivered = (TextView) findViewById(R.id.ticker_meter2);
+            meter1_delivered = (TextView) findViewById(R.id.ticket_meter1_total);
+            meter2_delivered = (TextView) findViewById(R.id.tick_meter2_total);
             fsii = (Button) findViewById(R.id.ticket_fsii);
-            total_text = (TextView) findViewById(R.id.tick_tl);
+            total_text = (TextView) findViewById(R.id.ticker_meter1Qty);
             int a=0;
             int b=0;
             if(!meter1.equals("null")&& !meter1.equals("-")) {

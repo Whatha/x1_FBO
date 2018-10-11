@@ -36,19 +36,20 @@ public class MyHandler extends Handler {
     // ---------------------- Variables Globales ----------------------
     // ----------------------------------------------------------------
 
-    private final WeakReference<Order_view> mActivity;
+    private final Order_view mActivity;
     private HexManager hexManager;
     public ArrayList<Byte> dataByte = new ArrayList();
     public int counter = 0;
     public int limitador = 10;
     public Context c;
+    public Activity act;
 
     // ----------------------------------------------------------------
     // ----------------------- Constructor Clase ----------------------
     // ----------------------------------------------------------------
 
     public MyHandler(Order_view activity, Context context) {
-        mActivity = new WeakReference<>(activity);
+        mActivity = activity;
         c=context;
         hexManager = new HexManager();
     }
@@ -89,10 +90,10 @@ public class MyHandler extends Handler {
                 }
                 break;
             case UsbService.CTS_CHANGE:
-                Toast.makeText(mActivity.get(), "CTS_CHANGE",Toast.LENGTH_LONG).show();
+                Toast.makeText(mActivity, "CTS_CHANGE",Toast.LENGTH_LONG).show();
                 break;
             case UsbService.DSR_CHANGE:
-                Toast.makeText(mActivity.get(), "DSR_CHANGE",Toast.LENGTH_LONG).show();
+                Toast.makeText(mActivity, "DSR_CHANGE",Toast.LENGTH_LONG).show();
                 break;
         }
 
@@ -106,7 +107,7 @@ public class MyHandler extends Handler {
             if(cmdValue.equals("2D") && !systemValue.equals("W&M")) {
 
                 Float dataValue = Float.parseFloat(json.getString("Data"));
-                int metro = Math.round(dataValue);
+                 metro = Math.round(dataValue);
                 Toast.makeText(c, "Qty dispensed: "+metro, Toast.LENGTH_LONG).show();
 
             }else   if(cmdValue.equals("1E") && !systemValue.equals("W&M")) {
@@ -125,6 +126,7 @@ public class MyHandler extends Handler {
     }
 }
 
+public int metro;
     // ----------------------------------------------------------------
     // ---------------------- Metodos Auxiliares ----------------------
     // ----------------------------------------------------------------
@@ -196,11 +198,9 @@ public class MyHandler extends Handler {
                         if (a.getMetros().size() > 1) {
                         a.getMetros().get(1).currentValue = newCurrent2;
                     }
-                        mActivity.get().dd.dismiss();
-
-                        Intent b = new Intent(c, Fuel_feed.class);
-                        b.putExtra("status", "Fueling completed!");
-                        c.startActivity(b);
+                        mActivity.dd.dismiss();
+                        mActivity.dialog = new Order_view.CustomDialog(mActivity, metro, 0, Static_variables.order.tailNbr.toString(), Static_variables.order.fsii,newCurrent1,newCurrent2);
+                        mActivity.dialog.show();
                 }
                 },
                 new Response.ErrorListener() {
@@ -208,7 +208,7 @@ public class MyHandler extends Handler {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
-                        mActivity.get().dd.dismiss();
+                        mActivity.dd.dismiss();
 
                         Toast.makeText(c, "Error!", Toast.LENGTH_SHORT).show();
 
