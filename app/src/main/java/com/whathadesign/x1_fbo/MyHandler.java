@@ -85,24 +85,30 @@ public class MyHandler extends Handler {
         }
 
         if (counter == limitador-2){
-            JSONObject json = hexManager.responseToJSON(dataByte);
-            try {
-                if(json.getString("command").equals("2D")) {
-                    Toast.makeText(c, "Fueled: "+json.getString("Data"), Toast.LENGTH_LONG).show();
+        JSONObject json = hexManager.responseToJSON(dataByte);
 
-                    mActivity.get().dd.dismiss();
-                    Static_variables.selected.getMetros().get(0).currentValue=Integer.parseInt(json.getString("Data"));
-                    Intent a = new Intent(c, Fuel_feed.class);
-                    a.putExtra("status", "Fueling completed!");
-                    c.startActivity(a);
-                }else{
-                    Static_variables.fuel("1");
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
+        try {
+            String cmdValue = json.getString("command");
+            String systemValue = json.getString("system_status");
+            String deliveryValue = json.getString("delivery_status");
+            if(cmdValue.equals("2D") && !systemValue.equals("W&M")) {
+
+                Toast.makeText(c, "Fueled: "+json.getString("Data"), Toast.LENGTH_LONG).show();
+                Float dataValue = Float.parseFloat(json.getString("Data"));
+                int metro = Math.round(dataValue);
+                mActivity.get().dd.dismiss();
+                Static_variables.selected.getMetros().get(0).currentValue=metro;
+                Intent a = new Intent(c, Fuel_feed.class);
+                a.putExtra("status", "Fueling completed!");
+                c.startActivity(a);
+            }else{
+                Static_variables.fuel("1");
             }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
+}
 
     // ----------------------------------------------------------------
     // ---------------------- Metodos Auxiliares ----------------------

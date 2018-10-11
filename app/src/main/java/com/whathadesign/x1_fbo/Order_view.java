@@ -653,7 +653,7 @@ public ProgressDialog dd;
                     public void onResponse(JSONObject response) {
                         dialog.dismiss();
                         Toast.makeText(getApplicationContext(),"Start fueling",Toast.LENGTH_SHORT).show();
-                        Static_variables.fuel(Static_variables.order.tailNbr);
+                        Static_variables.fuel(Static_variables.order.tailNbr.toString());
                     }
                 },
                 new Response.ErrorListener() {
