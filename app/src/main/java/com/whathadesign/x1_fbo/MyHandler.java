@@ -113,7 +113,9 @@ public class MyHandler extends Handler {
             }else   if(cmdValue.equals("1E") && !systemValue.equals("W&M")) {
                 Float dataValue = Float.parseFloat(json.getString("Data"));
                 int metro = Math.round(dataValue);
-                UpdateMeters(Static_variables.selected,metro,0);
+                Toast.makeText(c, "Final: "+metro, Toast.LENGTH_LONG).show();
+
+                // UpdateMeters(Static_variables.selected,metro,0);
 
             }else {
                 Static_variables.fuel("7");
