@@ -678,7 +678,7 @@ public ProgressDialog dd;
                         if(act.dialog.isShowing()) {
                             act.dialog.dismiss();
                         }
-                        Toast.makeText(act,"Start fueling",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(act,"Start fueling",Toast.LENGTH_SHORT).show();
                         Static_variables.fuel(Static_variables.order.tailNbr.toString());
                         act.dd.dismiss();
                         Intent b = new Intent(act, Fuel_feed.class);

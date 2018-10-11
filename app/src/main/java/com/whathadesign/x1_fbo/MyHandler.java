@@ -44,6 +44,7 @@ public class MyHandler extends Handler {
     public Context c;
     public Activity act;
     public boolean status=true;
+    boolean started=false;
     Thread hilo;
     // ----------------------------------------------------------------
     // ----------------------- Constructor Clase ----------------------
@@ -105,10 +106,16 @@ public class MyHandler extends Handler {
             String cmdValue = json.getString("command");
             String systemValue = json.getString("system_status");
             String deliveryValue = json.getString("delivery_status");
-            if(!systemValue.equals("W&M")){
-                status=true;
+
+            if(!systemValue.equals("W&M") && started){
+                status=false;
             }
-            if(cmdValue.equals("2D") && !systemValue.equals("W&M") && status) {
+
+            if(systemValue.equals("W&M")){
+                started=true;
+            }
+
+            if(cmdValue.equals("2D") && !systemValue.equals("W&M") && started) {
 
                 Float dataValue = Float.parseFloat(json.getString("Data"));
                  metro = Math.round(dataValue);
@@ -120,7 +127,7 @@ public class MyHandler extends Handler {
                 metro = Math.round(dataValue);
                 Toast.makeText(c, "Dispensando: "+metro, Toast.LENGTH_LONG).show();
             }
-            else   if(cmdValue.equals("1E") && !systemValue.equals("W&M") && status) {
+            else   if(cmdValue.equals("1E") && !systemValue.equals("W&M") && started) {
                 Float dataValue = Float.parseFloat(json.getString("Data"));
                 int metro = Math.round(dataValue);
                 //Toast.makeText(c, "Final: "+metro, Toast.LENGTH_LONG).show();
@@ -129,6 +136,7 @@ public class MyHandler extends Handler {
             }else {
                 Static_variables.fuel("7");
                 Static_variables.fuel("1");
+                status =true;
                 hilo = new Thread() {
                     @Override
                     public void run() {
