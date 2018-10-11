@@ -95,15 +95,17 @@ public class MyHandler extends Handler {
 
                 Float dataValue = Float.parseFloat(json.getString("Data"));
                 int metro = Math.round(dataValue);
-                mActivity.get().dd.dismiss();
                 Toast.makeText(c, "Fueled: "+metro, Toast.LENGTH_LONG).show();
+               // mActivity.get().dd.dismiss();
 
                // Static_variables.selected.getMetros().get(0).currentValue=metro;
-                Intent a = new Intent(c, Fuel_feed.class);
+              /*  Intent a = new Intent(c, Fuel_feed.class);
                 a.putExtra("status", "Fueling completed!");
-                c.startActivity(a);
+                c.startActivity(a);*/
             }else{
                 Static_variables.fuel("1");
+                Toast.makeText(c, "Wait: ", Toast.LENGTH_LONG).show();
+
             }
         } catch (JSONException e) {
             e.printStackTrace();
