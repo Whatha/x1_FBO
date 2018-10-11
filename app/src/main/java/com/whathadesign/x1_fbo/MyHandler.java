@@ -107,6 +107,8 @@ public class MyHandler extends Handler {
                 c.startActivity(a);
             }else {
                 Static_variables.fuel("7");
+                Static_variables.fuel("1");
+
             }
         } catch (JSONException e) {
             e.printStackTrace();
