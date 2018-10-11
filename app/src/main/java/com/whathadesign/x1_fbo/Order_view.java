@@ -226,9 +226,9 @@ public class Order_view extends AppCompatActivity {
         dialog.show();*/
     }
     public void onFueling(View v) {
-        completeJson(Static_variables.order, Static_variables.selected, (Order_view) this,123,123);
+        //completeJson(Static_variables.order, Static_variables.selected, (Order_view) this,123,123);
 
-        //seguir();
+        seguir();
 
     }
 
