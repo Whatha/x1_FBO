@@ -113,11 +113,7 @@ public class MyHandler extends Handler {
                 Float dataValue = Float.parseFloat(json.getString("Data"));
                 int metro = Math.round(dataValue);
                 UpdateMeters(Static_variables.selected,metro,0);
-                mActivity.get().dd.dismiss();
 
-                Intent a = new Intent(c, Fuel_feed.class);
-                a.putExtra("status", "Fueling completed!");
-                c.startActivity(a);
             }else {
                 Static_variables.fuel("7");
                 Static_variables.fuel("1");
@@ -198,15 +194,22 @@ public class MyHandler extends Handler {
                         Truck a = Static_variables.selected;
                         a.getMetros().get(0).currentValue = newCurrent1;
                         if (a.getMetros().size() > 1) {
-                            a.getMetros().get(1).currentValue = newCurrent2;
-                        }
+                        a.getMetros().get(1).currentValue = newCurrent2;
                     }
+                        mActivity.get().dd.dismiss();
+
+                        Intent b = new Intent(c, Fuel_feed.class);
+                        b.putExtra("status", "Fueling completed!");
+                        c.startActivity(b);
+                }
                 },
                 new Response.ErrorListener() {
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
+                        mActivity.get().dd.dismiss();
+
                         Toast.makeText(c, "Error!", Toast.LENGTH_SHORT).show();
 
                         System.out.println("ERROR CARAJO");
