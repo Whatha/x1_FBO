@@ -46,6 +46,10 @@ public class MyHandler extends Handler {
     public boolean status=true;
     boolean started=false;
     Thread hilo;
+    int cantHilos = 0;
+    int contadorTemp = 0;
+    public int metro = 0;
+
     // ----------------------------------------------------------------
     // ----------------------- Constructor Clase ----------------------
     // ----------------------------------------------------------------
@@ -109,6 +113,7 @@ public class MyHandler extends Handler {
 
             if(!systemValue.equals("W&M") && started){
                 status=false;
+                cantHilos = 0;
             }
 
             if(systemValue.equals("W&M")){
@@ -117,51 +122,57 @@ public class MyHandler extends Handler {
 
             if(cmdValue.equals("2D") && !systemValue.equals("W&M") && started) {
 
-                Float dataValue = Float.parseFloat(json.getString("Data"));
-                 metro = Math.round(dataValue);
+                //Float dataValue = Float.parseFloat(json.getString("Data"));
+                //metro = Math.round(dataValue);
                 //Toast.makeText(c, "Qty dispensed: "+metro, Toast.LENGTH_LONG).show();
-                status=false;
-            }else if(cmdValue.equals("2D")  && systemValue.equals("W&M")) {
+                status = false;
+                cantHilos = 0;
 
+            }if(cmdValue.equals("2D")  && systemValue.equals("W&M")) {
+                contadorTemp++;
                 Float dataValue = Float.parseFloat(json.getString("Data"));
                 metro = Math.round(dataValue);
-                Toast.makeText(c, "Dispensando: "+metro, Toast.LENGTH_LONG).show();
+                //Toast.makeText(c, "Dispensando: "+metro, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(c, "Contador Temp: "+contadorTemp, Toast.LENGTH_SHORT).show();
             }
-            else   if(cmdValue.equals("1E") && !systemValue.equals("W&M") && started) {
+            else if(cmdValue.equals("1E") && !systemValue.equals("W&M") && started) {
                 Float dataValue = Float.parseFloat(json.getString("Data"));
-                int metro = Math.round(dataValue);
-                //Toast.makeText(c, "Final: "+metro, Toast.LENGTH_LONG).show();
-                UpdateMeters(Static_variables.selected,metro,0);
                 status=false;
-            }else {
-                Static_variables.fuel("7");
-                Static_variables.fuel("1");
-                status =true;
-                hilo = new Thread() {
-                    @Override
-                    public void run() {
-                        try {
-                            while(status) {
-                                sleep(300);
-                                Static_variables.fuel("7");
-                                Static_variables.fuel("1");
+                cantHilos = 0;
+                int metro2 = Math.round(dataValue);
+                //Toast.makeText(c, "Final: "+metro, Toast.LENGTH_LONG).show();
+                UpdateMeters(Static_variables.selected,metro2,0);
+            }else if(cantHilos == 0) {
+                correr();
 
-                            }
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                };
-
-                hilo.start();
             }
         } catch (JSONException e) {
             e.printStackTrace();
+            //Toast.makeText(c, "Error in Handler!: "+e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 }
 
-public int metro;
+public void correr(){
+    hilo = new Thread() {
+        @Override
+        public void run() {
+            try {
+                while(status) {
+                    sleep(300);
+                    Static_variables.fuel("7");
+                    Static_variables.fuel("1");
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+    hilo.start();
+    cantHilos++;
+}
+
     // ----------------------------------------------------------------
     // ---------------------- Metodos Auxiliares ----------------------
     // ----------------------------------------------------------------
@@ -228,10 +239,13 @@ public int metro;
                     @Override
 
                     public void onResponse(JSONArray response) {
+                        status=false;
+                        cantHilos = 0;
+                        contadorTemp = 0;
                         Truck a = Static_variables.selected;
                         a.getMetros().get(0).currentValue = newCurrent1;
                         if (a.getMetros().size() > 1) {
-                        a.getMetros().get(1).currentValue = newCurrent2;
+                            a.getMetros().get(1).currentValue = newCurrent2;
                     }
                         mActivity.dd.dismiss();
                         mActivity.dialog = new Order_view.CustomDialog(mActivity, metro, 0, Static_variables.order.tailNbr.toString(), Static_variables.order.fsii,newCurrent1,newCurrent2);

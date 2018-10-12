@@ -220,7 +220,7 @@ public class Order_view extends AppCompatActivity {
         dd.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.transparente)));
         dd.show();
         dd.setContentView(R.layout.dialogo_progreso);
-        Toast.makeText(getApplicationContext(),"Start fueling",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"Fueling in progress...",Toast.LENGTH_SHORT).show();
         Static_variables.fuel(Static_variables.order.tailNbr.toString());
         /*dialog = new Order_view.CustomDialog(this, 1321, 12, Static_variables.order.tailNbr.toString(), Static_variables.order.fsii,10,10);
         dialog.show();*/
