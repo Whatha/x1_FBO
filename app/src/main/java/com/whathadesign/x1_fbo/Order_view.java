@@ -654,6 +654,8 @@ public ProgressDialog dd;
                     "flightNbr:'nsda'," +
                     "aditive:" + String.valueOf(o.fsii) + "," +
                     "note:'" + o.notes + "'," +
+                    "type:'" + o.type +"',"+
+                    "volume_measurement"+ o.volume +"',"+
                     "referenceNbr:null," +
                     "endingDateTime:" + o.arrivalDate + "," +
                     "startingDateTime:" + o.departureDate + "}";

@@ -57,7 +57,8 @@ public class New_fueling extends AppCompatActivity {
     RelativeLayout button_append;
     String type="Specific Qty";
     Button add;
-String fuelOn;
+String fuelOn, volume;
+    Spinner spinner;
 boolean ap;
     final CheckBox [] checkboxes= new CheckBox[4];
 
@@ -85,9 +86,9 @@ boolean ap;
                 return true;
             }
         });
-        Spinner spinner = (Spinner) findViewById(R.id.transfer_spinner_uno);
+        spinner = (Spinner) findViewById(R.id.transfer_spinner_uno);
 
-        String[] letra = {"Gallons","Liters"};
+        String[] letra = {"Gallons","Liters","Pounds"};
         button_append = (RelativeLayout) findViewById(R.id.button_append);
         spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, letra));
 
@@ -521,8 +522,9 @@ ArrayList <Tail>tails=new ArrayList<>();
                 tt=tails.get(i);
             }
         }
-
-        Order a = new Order(requestDetailId,tt.tailAircraftId,1,String.valueOf(qty),companyName,t.itemName,tt.tailNbr,tt.icao,"null","null","null","null",fuelOn,4,fsii,tt.modelName,"",notes,type);
+        int w= Integer.parseInt(null);
+        volume= spinner.getSelectedItem().toString();
+        Order a = new Order(type, w ,tt.tailAircraftId,1,String.valueOf(qty),companyName,t.itemName,tt.tailNbr,tt.icao,"null","null","null","null",fuelOn,4,fsii,tt.modelName,"",notes,volume);
        Static_variables.order=a;
         Intent h = new Intent(getApplicationContext(), Order_view.class);
         startActivity(h);

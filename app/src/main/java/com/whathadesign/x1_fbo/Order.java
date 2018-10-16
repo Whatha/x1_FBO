@@ -14,6 +14,8 @@ public class Order {
     String notes,type;
     boolean fsii;
     String model,manufacturer;
+    public String volume;
+
     public Order(int requestDetailId, int tailAircraftId, int serviceId, String qty, String companyName, String itemName, String tailNbr, String icao, String arrivalDate, String departureDate, String arrivalEstimateDate, String departureEstimateDate, String fuelOn, int eStatus, Boolean fsii, String model, String manufacturer, String notes,String fum_Qty_Info) {
         this.requestDetailId = requestDetailId;
         this.tailAircraftId=tailAircraftId;
@@ -36,7 +38,7 @@ public class Order {
         this.fum_Qty_Info=fum_Qty_Info;
     }
 
-    public Order(String type,int requestDetailId, int tailAircraftId, int serviceId, String qty, String companyName, String itemName, String tailNbr, String icao, String arrivalDate, String departureDate, String arrivalEstimateDate, String departureEstimateDate, String fuelOn, int eStatus, Boolean fsii, String model, String manufacturer, String notes) {
+    public Order(String type,int requestDetailId, int tailAircraftId, int serviceId, String qty, String companyName, String itemName, String tailNbr, String icao, String arrivalDate, String departureDate, String arrivalEstimateDate, String departureEstimateDate, String fuelOn, int eStatus, Boolean fsii, String model, String manufacturer, String notes, String volume) {
         this.requestDetailId = requestDetailId;
         this.tailAircraftId=tailAircraftId;
         this.serviceId = serviceId;
@@ -56,5 +58,6 @@ public class Order {
         this.model=model;
         this.manufacturer=manufacturer;
         this.type=type;
+        this.volume=volume;
     }
 }
